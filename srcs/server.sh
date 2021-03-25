@@ -1,4 +1,6 @@
 #!/bin/bash
+mkdir /etc/ssl
+openssl req -x509 -nodes -days 365 -subj "/C=KR/ST=Belgium/L=Brussels/O=innoaca/OU=42seoul/CN=dbnz" -newkey rsa:2048 -keyout /etc/ssl/nginx-selfsigned.key -out /etc/ssl/nginx-selfsigned.crt;
 service php7.3-fpm start
 service nginx start
 service mysql start
